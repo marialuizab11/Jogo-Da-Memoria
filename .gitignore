@@ -1,0 +1,20 @@
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Diretórios e arquivos de ambiente
+node_modules/
+dist/
+.env
+
+# IDE/Editor (VSCode)
+.vscode/
+*.code-workspace
+
+# Logs e dependências
+npm-debug.log*
+yarn-error.log*
+
+# Arquivos temporários
+*.tmp
+*.bak

@@ -1,0 +1,65 @@
+body{
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(226, 226, 196);
+  padding: 20px;
+  color: rgb(39, 74, 39);
+}
+
+#tabuleiro{
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 200px);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.carta{
+  width: 150px;
+  height: 200px;
+  background-color: darkgreen;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carta img{
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.carta::before{
+  content: '?';
+    position: absolute;
+    font-size: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.carta.virada {
+    background-color: #238232;
+    color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.carta.virada::before{
+  display: none;
+}
+
+carta.virada img{
+  display: block;
+}

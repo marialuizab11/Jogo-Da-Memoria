@@ -1,14 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tabuleiro = document.getElementById('tabuleiro');
     const cartas = [
-    'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg',
-    'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg',
-    'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg'
+    'imagens/javascript.png',
+    'imagens/html5.png',
+    'imagens/css3.png'
 ];
 
     const cartasEmbaralhadas = [...cartas, ...cartas].sort(() => Math.random() - 0.5);
 
     let cartasViradas = [];
+    let comecaJogo = false;
 
     cartasEmbaralhadas.forEach((camImagem) => {
         const carta = document.createElement('div');
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         carta.addEventListener('click', () => {
            //REGRA: só permite virar 2 cartas por vez
+           if (!comecaJogo) return;
            if(cartasViradas.length < 2 && !carta.classList.contains('virada')){
                 carta.classList.add('virada');
                 cartasViradas.push(carta);
@@ -41,11 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
                             carta1.classList.remove('virada');
                             carta2.classList.remove('virada');
                             cartasViradas = [];
-                        }, 1000);
+                        }, 500);
                     }
                 }
            }
         });
     });
+    setTimeout(() => {
+        const todasAsCartas = document.querySelectorAll('.carta');
+        todasAsCartas.forEach(carta => carta.classList.add('virada'));
+
+        setTimeout(() => {
+            todasAsCartas.forEach(carta => carta.classList.remove('virada'));
+            comecaJogo = true;
+        }, 2000);
+    }, 100);
 });
 

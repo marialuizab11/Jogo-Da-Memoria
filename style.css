@@ -53,13 +53,12 @@ body{
 .carta.virada {
     background-color: #238232;
     color: #ffffff;
-    transform: rotateY(180deg);
 }
 
 .carta.virada::before{
   display: none;
 }
 
-carta.virada img{
+.carta.virada img{
   display: block;
 }

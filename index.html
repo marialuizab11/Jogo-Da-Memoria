@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jogo da Memória</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- biblioteca canvas-confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <!-- A tag 'defer' faz com que o JS só rode depois que o HTML inteiro for carregado -->
     <script src="script.js" defer></script>
   </head>
   <body>
     <h1>Jogo da memória</h1>
     <h2>Teste sua mente com as tecnologias usadas para desenvolver esse site</h2>
-    <div id="tabuleiro">
-      
+    <div id="final-jogo" style="display: none;">
+      <p>Parabéns!! <br> Você concluiu o jogo da memória!</p>
+      <button id="recomecar-jogo"></button>
     </div>
+    <div id="tela-inicial">
+      <button id="comecar">Vamos lá!</button>
+    </div>
+    <div id="tabuleiro" style="display: none;">
+      
+    </div>    
   </body>
 </html>

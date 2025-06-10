@@ -104,3 +104,25 @@ body{
   color: rgb(4, 101, 4);
   font-weight: bolder;
 }
+
+#recomecar-jogo{
+  background-color: #238232;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 20px; 
+  padding: 10px 15px; 
+}
+
+#recomecar-jogo:hover{
+  background-color: #135c1e;
+}
+
+#recomecar-jogo:active {
+  transform: scale(0.98);
+}

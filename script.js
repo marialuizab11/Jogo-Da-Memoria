@@ -135,3 +135,7 @@ function verificarFimJogo(comecaJogo) {
     }, 500);
   }
 }
+
+document.getElementById("recomecar-jogo").addEventListener("click", function() {
+  location.reload(); // Recarrega a página completamente
+});
